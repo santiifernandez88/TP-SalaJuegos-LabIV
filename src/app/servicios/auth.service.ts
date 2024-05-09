@@ -27,7 +27,7 @@ export class AuthService {
   }
 
   getUserEmail(){
-    return this.userActive.currentUser;
+    return this.userActive.email;
   }
 
   logout() {

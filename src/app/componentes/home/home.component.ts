@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from "../login/login.component";
 import { Auth, signOut } from '@angular/fire/auth';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthService } from '../../servicios/auth.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { AuthService } from '../../servicios/auth.service';
     standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
-    imports: [LoginComponent]
+    imports: [LoginComponent, RouterModule, RouterOutlet]
 })
 export class HomeComponent {
 

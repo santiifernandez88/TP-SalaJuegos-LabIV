@@ -35,6 +35,14 @@ body {
     }
   }
 
+  #dropdownMenuButton {
+    background-color: rgb(209, 26, 26) !important;
+    border: none !important;
+}
+.dropdown-item:hover{
+background-color: rgb(209, 26, 26) !important;
+}
+
 /* Style for the tooltip container */
 .tooltip-container {
   --background-light: #ff5555; /* Red */
