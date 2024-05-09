@@ -39,8 +39,10 @@
       </div>
     </div>
   </nav>
-  <div class="tooltip-container">
-    <span class="tooltip">{{this.auth.getUserEmail()}}</span>
-    <span class="text">Quien soy?</span>
-  </div>   
+  @if (this.auth.getUser() != null){
+    <div class="tooltip-container">
+      <span class="tooltip">{{this.auth.getUserEmail()}}</span>
+      <span class="text">Quien soy?</span>
+    </div>  
+  }
 </div>
