@@ -5,15 +5,16 @@ body {
 
 
 .fondo {
-    /* Basic dimensions and centering */
+    
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   
-    /* Dark mode colors and gradient */
-    background: #121212; /* Fallback for browsers that don't support gradients */
+    
+    background: #121212; 
     background: linear-gradient(
       135deg,
       #121212 25%,
@@ -26,7 +27,7 @@ body {
     );
     background-size: 40px 40px;
   
-    /* Animation */
+    
     animation: move 4s linear infinite;
   }
   
@@ -39,7 +40,7 @@ body {
     }
   }
 
-  .form {
+  .formulario {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -54,7 +55,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
-  .form button {
+  .formulario button {
     align-self: flex-end;
   }
   
@@ -156,4 +157,20 @@ body {
     ;
   }
 
+  .btn-rellenar {
+    margin-top: 20px;
+    width: calc(100% - 1450px); /* Ancho del 100% menos el padding horizontal del formulario */
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+    border: 1px solid #f10703;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
   
