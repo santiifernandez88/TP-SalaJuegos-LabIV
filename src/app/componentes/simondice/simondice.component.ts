@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-simondice',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './simondice.component.html',
   styleUrl: './simondice.component.css'
 })
