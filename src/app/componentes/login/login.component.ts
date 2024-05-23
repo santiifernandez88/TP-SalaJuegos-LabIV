@@ -22,7 +22,6 @@ export class LoginComponent {
   loggedUser: string = "";
   msjError : string = "";
 
-
   constructor(private router: Router, public auth : AuthService, private firestore : Firestore) {}
 
   LoginUser() {

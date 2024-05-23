@@ -1,0 +1,139 @@
+.chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ff5555;
+  color: #ffffff;
+  padding: 10px;
+  width: 150px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure the toggle button is above other elements */
+}
+
+.chat-card {
+  width: 300px;
+  height: 400px; /* Set a height to make it scrollable */
+  background-color: #1e1d1d;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 10px;
+  background-color: #373636;
+  display: flex;
+  align-items: center;
+}
+
+.chat-header .h2 {
+  font-size: 16px;
+  color: #fdf9f9;
+}
+
+.chat-body {
+  flex-grow: 1; /* Make the body take up remaining space */
+  padding: 20px;
+  overflow-y: auto; /* Allow vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  word-wrap: break-word; /* Ensure long words break to the next line */
+  overflow-wrap: break-word; /* Compatibility for different browsers */
+}
+
+.incoming {
+  background-color: #6a303076;
+}
+
+.incoming .emisor {
+  color: white;
+}
+
+.incoming .mensajeEntrante {
+  color: white;
+}
+
+.outgoing {
+  background-color: #760101;
+  text-align: right;
+}
+
+.outgoing .mensaje {
+  color: white;
+  text-align: right;
+}
+
+.outgoing .fecha {
+  color: white;
+  text-align: left;
+}
+
+.message p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.chat-footer {
+  padding: 10px;
+  background-color: #373636;
+  display: flex;
+}
+
+.chat-footer input[type="text"] {
+  flex-grow: 1;
+  padding: 5px;
+  border: none;
+  border-radius: 3px;
+}
+
+.chat-footer button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #f90400;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chat-footer button:hover {
+  background-color: #0f9d58;
+}
+
+@keyframes chatAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.chat-card .message {
+  animation: chatAnimation 0.3s ease-in-out;
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
+}
+
+.chat-card .message:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+.chat-card .message:nth-child(odd) {
+  animation-delay: 0.3s;
+}

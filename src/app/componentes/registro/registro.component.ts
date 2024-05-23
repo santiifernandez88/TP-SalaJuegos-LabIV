@@ -27,7 +27,7 @@ export class RegistroComponent {
 
   RegistrarUser(){
     this.auth.Register(this.email, this.password).then((res) => {
-      if(res.user.email !== null) this.auth.userActive = this.auth.getUser()
+      if(res.user.email !== null) this.auth.userActive = res.user;
       this.goTo("home");
       this.flagError = false;
     }).catch((e) => {

@@ -1,0 +1,60 @@
+<div class="fondo">
+    <a class="button" [routerLink]="['/home']"  >
+        <div class="button-box">
+          <span class="button-elem">
+            <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+              ></path>
+            </svg>
+          </span>
+          <span class="button-elem">
+            <svg viewBox="0 0 46 40">
+              <path
+                d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+              ></path>
+            </svg>
+          </span>
+        </div>
+      </a>
+    <div class="row">
+        <div class="col text-center">
+            <div class="thirteen">
+                <h1 >Juego del Ahorcado</h1>
+            </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col text-center tex">
+          <img src="assets/ahorcado/ahorcado{{intentos}}.png" class="ahorcado-img" alt="ahorcado" height="200px" />
+          <h3 class="badge bg-danger text-wrap">INTENTOS: <small>{{intentos}} / 6 </small></h3>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col text-center">
+          <h1>{{palabraOculta}}</h1>
+        </div>
+      </div>
+    
+      <div class="row" *ngIf="partida==undefined">
+        <div class="col text-center">
+          <button (click)="comprobar(letra)" *ngFor="let letra of letras"
+            [style.background-color]="botonesClickeados[letra] ? 'black' : 'red'" class="btn text-light">
+            {{ letra.toUpperCase() }}
+          </button>
+        </div>
+      </div>
+      <div class="row" *ngIf="partida==true||partida==false">
+        <div class="col text-center">
+          @if (partida == true) 
+          {
+            <h1>GANASTE!!!</h1>
+          }@else {
+            <h2>Perdiste :/</h2>
+          }
+          <button class="btn btn-secondary" (click)="reiniciar()">REINCIAR</button>
+        </div>
+      </div>
+</div>

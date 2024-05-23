@@ -39,10 +39,52 @@
       </div>
     </div>
   </nav>
+  <div class="cards-container" >
+    <div class="card-Ahorcado" (click)="NavegarJuegos('ahorcado')">
+      <div class="card">
+        <img src="assets/ahorcado.jpg" alt="ahorcado" height="500px">
+        <div class="card__content">
+          <p class="card__title">Ahorcado</p>
+          <p class="card__description">En este juego tenes que adivinar la palabra, sin que se te acaben los intentos, vas a tener que ir armando la palabra adivinando las letras...</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-Mayormenor" (click)="NavegarJuegos('mayormenor')">
+      <div class="card">
+        <img src="assets/mayormenor.jpg" alt="mayormenor" height="500px">
+        <div class="card__content">
+          <p class="card__title">Mayor o menor</p>
+          <p class="card__description">En este juego vas a tener que adivinar si la carta que sigue es, mayor o menor a la que se muestra en pantalla, suerte!!.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-Preguntados" (click)="NavegarJuegos('preguntados')">
+      <div class="card">
+        <img src="assets/preguntados.jpg" alt="preguntados" height="300px" width="485px">
+        <div class="card__content">
+          <p class="card__title">Preguntados</p>
+          <p class="card__description">En este juego, tenes que responder de forma correcta las preguntas para poder sumar puntos, vas a tener que estar muy atento.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card-Simondice" (click)="NavegarJuegos('simondice')">
+      <div class="card">
+        <img src="assets/simondice.png" alt="simondice" height="250px">
+        <div class="card__content">
+          <p class="card__title">Simon dice</p>
+          <p class="card__description">En este juego, vas a tener que seguir paso a paso lo que dice Simon, pero cuidado no te confundas, solamente hay que seguirlo cuando "Simon dice" ...</p>
+        </div>
+      </div>
+    </div>
+  </div>
   @if (this.auth.getUser() != null){
     <div class="tooltip-container">
       <span class="tooltip">{{this.auth.getUserEmail()}}</span>
-      <span class="text">Quien soy?</span>
-    </div>  
+      <span class="text">Usuario logueado</span>
+    </div> 
+    <div class="chat">
+      <app-chat></app-chat> 
+    </div>
   }
+
 </div>

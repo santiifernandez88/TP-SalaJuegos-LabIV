@@ -7,9 +7,47 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 export const routes: Routes = [
 
     { path: '', redirectTo: '/home', pathMatch: "full" },
-    { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'quiensoy', component: QuienSoyComponent },
-    { path: 'registro', component: RegistroComponent },
+    { path: 'login',
+      loadComponent: () => 
+        import('./componentes/login/login.component').then(
+            (c) => c.LoginComponent
+        ),
+      title: 'Login'
+    },
+    { path: 'home',
+      loadComponent: () => 
+        import('./componentes/home/home.component').then(
+            (c) => c.HomeComponent
+        ),
+      title: 'Home' 
+    },
+    { path: 'quiensoy',
+      loadComponent: () => 
+      import('./componentes/quien-soy/quien-soy.component').then(
+          (c) => c.QuienSoyComponent
+      ),
+      title: 'QuienSoy' 
+    },
+    { path: 'registro',
+      loadComponent: () => 
+        import('./componentes/registro/registro.component').then(
+          (c) => c.RegistroComponent
+        ),
+      title: 'Registro' 
+    },
+    { path: 'ahorcado',
+      loadComponent: () => 
+        import('./componentes/ahorcado/ahorcado.component').then(
+          (c) => c.AhorcadoComponent
+        ),
+      title: 'Ahorcado' 
+    },
+    { path: 'mayormenor',
+      loadComponent: () => 
+        import('./componentes/mayormenor/mayormenor.component').then(
+          (c) => c.MayormenorComponent
+        ),
+      title: 'Mayor o menor' 
+    },
 
 ];
