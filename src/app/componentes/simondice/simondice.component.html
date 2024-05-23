@@ -1,1 +1,47 @@
+<div class="fondo">
+    <div class="thirteen">
+        <h1>Simon dice</h1>
+    </div>
 
+    <div class="simondice">
+        <p>Puntaje: {{puntaje}}</p>
+        <p>Segundos faltantes: {{segundos}}</p>
+        <img src="assets/simondice1.jpg" alt="simondice" height="200px">
+        <p>Simon dice {{simonDice}}</p>
+    </div>
+    @if (mensaje == undefined) {
+        <div class="botones" >
+            <button (click)="comprobar('arriba')">
+                <span> Arriba </span>
+            </button>
+            <div>
+                <button (click)="comprobar('izquierda')">
+                    <span> Izquierda </span>
+                </button>
+                <button (click)="comprobar('derecha')">
+                    <span> Derecha</span>
+                </button>
+            </div>
+            <button (click)="comprobar('abajo')">
+                <span> Abajo </span>
+            </button>
+            <button (click)="comprobar('salta')">
+                <span> Saltar </span>
+            </button>
+        </div>
+    } @else {
+        @if (this.mensaje == false) {
+            <p>Perdiste :/</p>
+            <button class="btn btn-danger  mt" (click)="iniciar()">Reciniciar</button>
+        } @else {
+            <p>GANASTE!!!!!</p>
+            <p>HICISTE UNA PUNTUACION TOTAL DE 5</p>
+            <button class="btn btn-danger  mt" (click)="iniciar()">Reciniciar</button>
+        }
+    }
+   
+    
+    
+
+
+</div>

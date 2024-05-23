@@ -1,1 +1,52 @@
-<p>preguntados works!</p>
+<div class="fondo">
+    <a class="button" [routerLink]="['/home']"  >
+        <div class="button-box">
+          <span class="button-elem">
+            <svg viewBox="0 0 46 40" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+              ></path>
+            </svg>
+          </span>
+          <span class="button-elem">
+            <svg viewBox="0 0 46 40">
+              <path
+                d="M46 20.038c0-.7-.3-1.5-.8-2.1l-16-17c-1.1-1-3.2-1.4-4.4-.3-1.2 1.1-1.2 3.3 0 4.4l11.3 11.9H3c-1.7 0-3 1.3-3 3s1.3 3 3 3h33.1l-11.3 11.9c-1 1-1.2 3.3 0 4.4 1.2 1.1 3.3.8 4.4-.3l16-17c.5-.5.8-1.1.8-1.9z"
+              ></path>
+            </svg>
+          </span>
+        </div>
+      </a>
+    <div class="thirteen">
+        <h1>Preguntados</h1>
+    </div>
+    <div class="time-countdown">
+        <ul>
+          Tiempo restante: {{segundos}} s
+        </ul>
+    </div>
+    <h2 class="badge bg-secondary text-wrap">PREGUNTAS CORRECTAS: {{contadorCorrectas}}</h2>
+    <p>Categoria: {{categoria}}</p>
+    <p>Pregunta: {{pregunta}}</p>
+    <div class="image-container">
+        <img src={{img}} alt="logo" >
+    </div>
+    <h3>Opciones:</h3>
+    <div class="row px-5">
+      @if (this.mensaje == undefined) {
+        <div class="col mx-4" *ngFor="let opcion of opciones">
+          <button class="btn btn-danger  mt" (click)="comprobar(opcion)">{{ opcion }}</button>
+        </div>
+        
+      } @else {
+        @if (this.mensaje == false) 
+        {
+            <p>Perdiste :/</p>
+            <button class="btn btn-danger  mt" (click)="reiniciar()">Reciniciar</button>
+        } @else { 
+          <p>GANASTE!!!!!!</p>
+          <button class="btn btn-danger  mt" (click)="reiniciar()">Reciniciar</button>
+        }
+      }
+  </div>
+</div>

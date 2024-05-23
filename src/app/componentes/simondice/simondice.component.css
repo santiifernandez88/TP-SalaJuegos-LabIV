@@ -1,33 +1,123 @@
 body {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
 
 .fondo {
-    width: 100vw;
-    height: 100vh;
-    background: #121212; 
-    background: linear-gradient(
-      135deg,
-      #121212 25%,
-      #1a1a1a 25%,
-      #1a1a1a 50%,
-      #121212 50%,
-      #121212 75%,
-      #1a1a1a 75%,
-      #1a1a1a
-    );
-    background-size: 40px 40px;
   
-    animation: move 4s linear infinite;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  
+  background: #121212; 
+  background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+
+  
+  animation: move 4s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+  .thirteen h1 {
+    margin-left: 100px;
+    position:relative;
+    font-size:50px;
+    font-weight:700;
+    letter-spacing:0px;
+    text-transform:uppercase;
+    width:500px;
+    text-align:center; 
+    margin: 50px;  
+    border:2px solid #fbfbfb;
+    padding:5px 0px 3px 0px;
+    color: white;
+  }
+  .thirteen h1:before, .thirteen h1:after {
+      background-color: #c50000;
+      position:absolute; 
+      content: '';
+      height: 7px;
+  
+      width: 7px; border-radius:50%;
+      bottom: 12px;
+  }
+  .thirteen h1:before {
+     left:-20px;
+  }
+  .thirteen h1:after {
+     right:-20px;
+  }
+
+
+  button {
+    margin-top: 20px;
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
   }
   
-  @keyframes move {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 40px 40px;
-    }
+  button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+  }
+  
+  button span:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+  }
+  
+  button span:not(hover) {
+    transition: all 1s;
+  }
+
+  .botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .simondice{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }

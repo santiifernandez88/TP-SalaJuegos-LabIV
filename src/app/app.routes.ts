@@ -49,5 +49,19 @@ export const routes: Routes = [
         ),
       title: 'Mayor o menor' 
     },
+    { path: 'preguntados',
+      loadComponent: () => 
+        import('./componentes/preguntados/preguntados.component').then(
+          (c) => c.PreguntadosComponent
+        ),
+      title: 'Preguntados' 
+    },
+    { path: 'simondice',
+      loadComponent: () => 
+        import('./componentes/simondice/simondice.component').then(
+          (c) => c.SimondiceComponent
+        ),
+      title: 'Simon dice' 
+    },
 
 ];
